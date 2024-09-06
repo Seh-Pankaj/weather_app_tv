@@ -1,0 +1,222 @@
+<!--
+Copyright (c) 2024 LG Electronics Inc.
+SPDX-License-Identifier: Apache-2.0
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="color_coding.js"></script>
+    <script defer src="weather_types.js"></script>
+    <script defer src="script.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <script src="webOSTVjs-1.2.10/webOSTV.js" charset="utf-8"></script>
+  <script src="webOSTVjs-1.2.10/webOSTV-dev.js" charset="utf-8"></script>
+  <script type="text/javascript"></script>
+
+  <body>
+    <div id="whole">
+      <video
+        src="assets/videos/sunny.mp4"
+        id="weatherVideo"
+        autoplay
+        loop
+      ></video>
+      <div id="weatherTable">
+        <div class="first">
+          <div class="noto-sans-font" id="weatherType">Weather</div>
+          <div id="iconCont">
+            <img
+              id="weatherIcon"
+              alt="weather"
+              src="assets/iconSet/cloudy.svg"
+            />
+          </div>
+          <div class="moderustic-light">
+            <div style="text-align: center">
+              <img
+                class="iconHeightWidth"
+                src="assets/iconSet/sunrise.svg"
+                alt="sunrise"
+              />
+            </div>
+            <div id="sunrise">00:00 AM</div>
+          </div>
+          <div class="moderustic-light">
+            <div style="text-align: center">
+              <img
+                class="iconHeightWidth"
+                src="assets/iconSet/sunset.svg"
+                alt="sunset"
+              />
+            </div>
+            <div id="sunset">00:00 PM</div>
+          </div>
+        </div>
+
+        <div class="first moderustic-light">
+          <div>
+            <div>
+              <div id="temp">00.0 &deg;</div>
+            </div>
+            <div>
+              <div style="display: inline-block">H</div>
+              <div style="display: inline-block" id="highTemp">: 00.0&deg;</div>
+            </div>
+            <div>
+              <div style="display: inline-block">L</div>
+              <div style="display: inline-block" id="lowTemp">: 00.0&deg;</div>
+            </div>
+          </div>
+          <div id="feelsLikeCont">
+            <div id="feelsLikeText">Feels Like</div>
+            <div id="feelsLike">00.0 &deg;</div>
+          </div>
+          <div id="humCont">
+            <div>Humidity</div>
+            <div id="humidity">00 %</div>
+          </div>
+          <div id="visCont">
+            <div>Visibility</div>
+            <div id="visibility">0 km</div>
+          </div>
+        </div>
+        <div class="first moderustic-light">
+          <div id="moonCont">
+            <div style="text-align: center">
+              <img
+                class="iconHeightWidth"
+                src="assets/iconSet/moonrise.svg"
+                alt="moonrise"
+              />
+            </div>
+
+            <div id="moonrise">00:00 PM</div>
+          </div>
+          <div>
+            <div style="text-align: center">
+              <img
+                class="iconHeightWidth"
+                src="assets/iconSet/moonset.svg"
+                alt="moonset"
+              />
+            </div>
+
+            <div id="moonset">00:00 AM</div>
+          </div>
+          <div>
+            <img
+              id="moon_phase_img"
+              class="iconHeightWidth"
+              src="assets/iconSet/moon-full.svg"
+              alt="moonset"
+            />
+            <div style="text-align: center" id="moon_illumination">00</div>
+          </div>
+          <div>
+            <img
+              id="cloudIcon"
+              class="iconHeightWidth"
+              src="assets/iconSet/cloudy.svg"
+              alt="clouds"
+            />
+            <div>
+              <div style="text-align: center" id="cloudCover">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="first moderustic-light">
+          <div style="margin-left: 0px">
+            <img
+              width="150px"
+              height="150px"
+              src="assets/iconSet/windsock.svg"
+              alt="windsock"
+            />
+          </div>
+          <div id="windCont">
+            <div id="windSpeed">0.0 kph</div>
+            <div id="windDirection">0 &deg; (N)</div>
+            <div id="gust">Gust 0 kph</div>
+          </div>
+          <div>
+            <img
+              id="uvIcon"
+              height="150px"
+              width="150px"
+              src="assets/iconSet/uv-index-1.svg"
+              alt="uv index"
+            />
+          </div>
+        </div>
+        <div class="first moderustic-light">
+          <div>
+            <div id="aqi_IN">AQI</div>
+            <div style="height: 10px; margin-bottom: 10px" id="aqiColor"></div>
+          </div>
+        </div>
+        <div class="first moderustic-light">
+          <div>
+            <div>PM 10</div>
+            <div id="pm10"></div>
+            <div style="height: 10px" id="pm10Color"></div>
+          </div>
+          <div>
+            <div>PM 2.5</div>
+            <div id="pm25"></div>
+            <div style="height: 10px" id="pm25Color"></div>
+          </div>
+          <div>
+            <div>CO</div>
+            <div id="co"></div>
+            <div style="height: 10px" id="coColor"></div>
+          </div>
+          <div>
+            <div>O3</div>
+            <div id="o3"></div>
+            <div style="height: 10px" id="o3Color"></div>
+          </div>
+          <div>
+            <div>NO2</div>
+            <div id="no2"></div>
+            <div style="height: 10px" id="no2Color"></div>
+          </div>
+          <div>
+            <div>SO2</div>
+            <div id="so2"></div>
+            <div style="height: 10px" id="so2Color"></div>
+          </div>
+        </div>
+      </div>
+      <div id="timeCont">
+        <div class="oswald-time" id="time">Time</div>
+        <div class="moderustic-light">
+          <div id="location">सहरावत निवास, अंबरहाई</div>
+          <div>Last Updated</div>
+          <div id="lastUpdated">2024-08-17 10:15</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

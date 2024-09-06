@@ -1,0 +1,13 @@
+{
+  "id": "com.domain.app",
+  "version": "1.0.0",
+  "vendor": "My Company",
+  "type": "web",
+  "main": "index.html",
+  "title": "Weather",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "splashBackground": "assets/splash.jpg",
+  "iconColor": "grey",
+  "bgImage": "assets/splash.jpg"
+}

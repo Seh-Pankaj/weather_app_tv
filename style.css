@@ -1,0 +1,115 @@
+body {
+  background-color: #000000;
+  margin: 0px;
+  height: 1080px;
+  width: 1920px;
+}
+
+.noto-sans-font {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.moderustic-light * {
+  font-family: "Moderustic", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.oswald-time {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#whole {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+video {
+  object-fit: cover;
+  z-index: -1;
+  position: absolute;
+}
+
+#weatherTable {
+  color: #ffffff;
+  width: 65%;
+  font-size: 30px;
+  float: left;
+}
+
+.first {
+  margin-bottom: 10px;
+}
+
+.first > div {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#weatherTable > :nth-child(2) > :not(:first-child) > :first-child {
+  margin-bottom: 10px;
+}
+
+#weatherTable > :nth-child(2) > :not(:first-child) > :nth-child(2) {
+  text-align: center;
+}
+
+.iconHeightWidth {
+  width: 80px;
+  height: 80px;
+}
+
+#weatherType {
+  max-width: 60%;
+  font-size: 80px;
+  font-weight: 200 !important;
+  vertical-align: top;
+}
+
+#iconCont {
+  vertical-align: super;
+  height=: 100px;
+  width: 100px;
+}
+
+#temp {
+  font-size: 50px;
+}
+
+#windCont {
+  margin-left: 0px;
+  margin-top: 10px;
+  vertical-align: top;
+}
+
+#windCont > div {
+  margin-bottom: 5px;
+}
+
+#aqi_IN {
+  font-size: 40px;
+}
+
+#timeCont {
+  padding-top: 50px;
+  padding-right: 50px;
+  color: #ffffff;
+  float: right;
+  text-align: right;
+  font-size: 30px;
+}
+
+#time {
+  font-size: 70px;
+  font-weight: 700 !important;
+}
+
+#location {
+  font-size: 40px;
+  font-weight: 500 !important;
+}
